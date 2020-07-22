@@ -1,8 +1,10 @@
-# GitHub Collaboration
+# Under Development 🛠 ...
+
+## GitHub Collaboration
 
 Issues and pull requests are welcomed on GitHub.
 
-## Terminology
+### Terminology
 
 * **Gitlord** - The person managing the merging of work on Git.
 * **Everyone else** - All other people in the team.
@@ -10,14 +12,14 @@ Issues and pull requests are welcomed on GitHub.
 * **Remote** - Remote Git repo on person's Github account.
 * **Repo** - Git repository.
 
-## Create Project (one-off)
+### Create Project (one-off)
 
 * **Everyone else**: Fork the repo on Github.
 * **Everyone else**: Clone repo on Github down to local machine.
 * **Everyone else**: Add git remote that points to Gitlord's Github repo on your local repo. 
 
 
-## Recurring Workflow
+### Recurring Workflow
 
 0. For first time contributor, make sure you have completed **Create Project** steps from above before proceeding further.
 1. Make sure you are in the feature branch which contains work you want to provide to Gitlord's Github repo.
