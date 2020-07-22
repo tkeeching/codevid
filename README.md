@@ -1,68 +1,33 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# GitHub Collaboration
 
-## Available Scripts
+Issues and pull requests are welcomed on GitHub.
 
-In the project directory, you can run:
+## Terminology
 
-### `yarn start`
+* **Gitlord** - The person managing the merging of work on Git.
+* **Everyone else** - All other people in the team.
+* **Local** - Local Git repo on a person's machine.
+* **Remote** - Remote Git repo on person's Github account.
+* **Repo** - Git repository.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## Create Project (one-off)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+* **Everyone else**: Fork the repo on Github.
+* **Everyone else**: Clone repo on Github down to local machine.
+* **Everyone else**: Add git remote that points to Gitlord's Github repo on your local repo. 
 
-### `yarn test`
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Recurring Workflow
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+0. For first time contributor, make sure you have completed **Create Project** steps from above before proceeding further.
+1. Make sure you are in the feature branch which contains work you want to provide to Gitlord's Github repo.
+2. Add & Commit your work by running the followings, 
+  `git add -A`
+  `git commit -m 'commit message'`.
+3. To download commits to local machine:
+  Run `git fetch gitlord`
+4. To rebase commits to feature branch:
+  Run `git rebase gitlord/master`
+5. Run `git push origin feature_branch`, where *feature_branch* is the name of your branch.
+6. Make pull request from your branch to Gitlord's master.
+7. Gitlord to inform teammates to pull down the changes using steps 3 & 4.
