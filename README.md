@@ -2,8 +2,6 @@
 
 ## GitHub Collaboration
 
-Issues and pull requests are welcomed on GitHub.
-
 ### Terminology
 
 * **Gitlord** - The person managing the merging of work on Git.
