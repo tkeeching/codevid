@@ -21,9 +21,7 @@ Issues and pull requests are welcomed on GitHub.
 
 0. For first time contributor, make sure you have completed **Create Project** steps from above before proceeding further.
 1. Make sure you are in the feature branch which contains work you want to provide to Gitlord's Github repo.
-2. Add & Commit your work by running the followings, 
-  `git add -A`
-  `git commit -m 'commit message'`.
+2. Add & Commit your work: Run `git add -A` & `git commit -m 'commit message'`.
 3. To download commits to local machine:
   Run `git fetch gitlord`
 4. To rebase commits to feature branch:
