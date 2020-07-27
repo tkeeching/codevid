@@ -7,7 +7,7 @@ class HomeLeft extends React.Component{
             <div className="homeleft-container">
                 <div>
                     <p>Search your state or territory</p>
-                    <input type="text" placeholder="Search"/>
+                    <input type="text" placeholder="Search the state"/>
                 </div>
             </div>
         )
