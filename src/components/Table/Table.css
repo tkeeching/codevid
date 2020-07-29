@@ -1,0 +1,30 @@
+#table-container {
+    text-align: center;
+    border-collapse: collapse;
+    border: 3px solid white;
+    width: 100%;
+    margin: 50px 0;
+    color: #6c757d;
+    font-weight: 600;
+}
+  
+#table-container td, #table-container th {
+    border: 5px solid white;
+    padding: 8px;
+}
+
+#table-container tr:nth-child(even){
+    background-color: #f6f6f7;
+}
+
+#table-container tr:hover {
+    background-color: #ddd;
+}
+
+#table-container th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: center;
+    background-color:#f6f6f7;;
+    color: #6c757d;
+}
