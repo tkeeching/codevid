@@ -1,14 +1,16 @@
 import React from 'react'
 import './HomeLeft.css'
+import Header from '../Header/Header'
+import Card from '../Card/Card'
+import Table from '../Table/Table'
 
 class HomeLeft extends React.Component{
     render(){
         return(
             <div className="homeleft-container">
-                <div>
-                    <p>Search your state or territory</p>
-                    <input type="text" placeholder="Search"/>
-                </div>
+                <Header />
+                <Card />
+                <Table />
             </div>
         )
     }
