@@ -1,0 +1,25 @@
+.card-container{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 30px;
+}
+
+.card-container p{
+    font-weight: 700;
+}
+
+.confirmed p{
+    color: red;
+}
+
+.active p{
+    color: blue;
+}
+
+.recovered p{
+    color: green;
+}
+
+.deceased p{
+    color: grey;
+}
