@@ -1,5 +1,7 @@
 import React from 'react'
 import './Header.css'
+import '../LiveTime/LiveTime'
+import LiveTime from '../LiveTime/LiveTime'
 
 class Header extends React.Component{
     render(){
@@ -7,7 +9,7 @@ class Header extends React.Component{
             <div className="header-container">
                 <p>Search your state or territory</p>
                 <input type="text" placeholder="Search the state"/>
-                <div><p>27 July, 10am</p></div>
+                <LiveTime />
             </div>
         )
     }
