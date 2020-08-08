@@ -4,13 +4,15 @@ import Header from '../Header/Header'
 import Card from '../Card/Card'
 import Table from '../Table/Table'
 
-class HomeLeft extends React.Component{
+class HomeLeft extends React.Component{ 
     render(){
+        const { data } = this.props;
+
         return(
             <div className="homeleft-container">
                 <Header />
-                <Card />
-                <Table />
+                <Card data={data} />
+                <Table data={data} />
             </div>
         )
     }
