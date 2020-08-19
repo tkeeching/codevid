@@ -3,7 +3,7 @@ import './Card.css'
 
 class Card extends React.Component{
     render(){
-        const { data } = this.props;
+        const { data, dataWorld, isLoading } = this.props;
         const yesterdayConfirmed = data[1].attributes.Total_Cases;
         const todayConfirmed = data[0].attributes.Total_Cases;
         const confirmedDiff = todayConfirmed - yesterdayConfirmed;
@@ -11,6 +11,19 @@ class Card extends React.Component{
         const todayDeceased = data[0].attributes.Total_Deaths;
         const deceasedDiff = todayDeceased - yesterdayDeceased;
 
+        const findAustralia = () => {
+            return (
+                dataWorld.filter(el => el.country === 'Australia')
+            )
+        }
+
+        let australiaCases = 0;
+
+        if (!isLoading) {
+            australiaCases = findAustralia()[0];
+            console.log(australiaCases);
+        }
+        
         return(
             <div className="card-container">
                 <div className="confirmed">
@@ -20,13 +33,13 @@ class Card extends React.Component{
                 </div>
                 <div className="active">
                     <p>Active</p>
-                    <p>+4352</p>
-                    <p>14,40,371</p>
+                    <p><br /></p>
+                    <p>{isLoading ? 0 : australiaCases.active_cases}</p>
                 </div>
                 <div className="recovered">
                     <p>Recovered</p>
-                    <p>+4352</p>
-                    <p>14,40,371</p>
+                    <p>{isLoading ? 0 : australiaCases.new_recovered}</p>
+                    <p>{isLoading ? 0 : australiaCases.total_recovered}</p>
                 </div>
                 <div className="deceased">
                     <p>Deceased</p>

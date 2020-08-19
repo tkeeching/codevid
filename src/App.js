@@ -1,27 +1,39 @@
 import React, { useEffect, useState } from 'react';
 import './App.css';
 import axios from 'axios';
+import { JSDOM } from 'jsdom';
 
 import Navbar from './components/Navbar/Navbar'
 import HomeLeft from './components/HomeLeft/HomeLeft'
 import Footer from './components/Footer/Footer'
 
 function App() {
-  let [data, setData] = useState([]);
+  let [dataAus, setDataAus] = useState([]);
+  let [dataWorld, setDataWorld] = useState([]);
   const [isLoading, setIsLoading] = useState(true); 
 
   const getData = async () => {
-    const url = 'https://services1.arcgis.com/vHnIGBHHqDR6y0CR/arcgis/rest/services/COVID19_Time_Series/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json';
+    const urlAus = 'https://services1.arcgis.com/vHnIGBHHqDR6y0CR/arcgis/rest/services/COVID19_Time_Series/FeatureServer/0/query?where=1%3D1&outFields=*&outSR=4326&f=json';
     
-    let res = await axios.get(url);
-    let data = res.data.features.sort((a, b) => (b.attributes.Date - a.attributes.Date));
-    setData(data);
+    let resAus = await axios.get(urlAus);
+    let dataAus = resAus.data.features.sort((a, b) => (b.attributes.Date - a.attributes.Date));
+    setDataAus(dataAus);
+    // console.log(dataAus);
+  }
+
+  const getWorldData = async () => {
+    const urlWorld = 'https://5pkutakl20.execute-api.ap-southeast-2.amazonaws.com/default/app-dev-function';
+    
+    let resWorld = await axios.get(urlWorld);
+    let dataWorld = resWorld.data.body.data;
+    setDataWorld(dataWorld);
     setIsLoading(false);
-    console.log(data);
+    console.log(dataWorld);
   }
   
   useEffect(() => {
     getData();
+    getWorldData();
   }, [])
 
   const defaultData = [
@@ -58,7 +70,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <HomeLeft data={ isLoading ? defaultData : data } />
+      <HomeLeft data={ isLoading ? defaultData : dataAus } dataWorld={ dataWorld } isLoading={ isLoading }/>
       <Footer />
     </div>
   );

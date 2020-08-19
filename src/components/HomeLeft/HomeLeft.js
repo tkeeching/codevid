@@ -11,7 +11,7 @@ class HomeLeft extends React.Component{
         return(
             <div className="homeleft-container">
                 <Header />
-                <Card data={data} />
+                <Card {...this.props} />
                 <Table data={data} />
             </div>
         )

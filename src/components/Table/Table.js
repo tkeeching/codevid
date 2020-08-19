@@ -21,8 +21,6 @@ class Table extends Component {
  
     renderTableData() {
         const { data } = this.props;
-        console.log('table props: ');
-        console.log(data);
         let states = [
             { state: 'ACT', confirmed: data[0].attributes.ACT, active: 100, recovered: 2000, deceased: data[0].attributes.ACT_Deaths },
             { state: 'NSW', confirmed: data[0].attributes.NSW, active: 50, recovered: 1000, deceased: data[0].attributes.NSW_Deaths },
