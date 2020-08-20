@@ -14,7 +14,7 @@ class Card extends React.Component {
     let australiaCases = 0;
     let todayActive = 0;
     let todayRecovered = 0;
-    let recoveredDiff = 0;
+    let todayRecoveredDiff = 0;
     let todayRecoveredPercentage = 0;
 
     const findAustralia = () => {
@@ -25,7 +25,7 @@ class Card extends React.Component {
       australiaCases = findAustralia()[0];
       todayActive = australiaCases.active_cases;
       todayRecovered = australiaCases.total_recovered;
-      recoveredDiff = australiaCases.new_recovered;
+      todayRecoveredDiff = australiaCases.new_recovered;
       todayRecoveredPercentage = `${((todayRecovered / todayConfirmed) * 100).toFixed(2)}%`;
     }
 
@@ -45,7 +45,7 @@ class Card extends React.Component {
         </div>
         <div className="recovered">
           <p>Recovered</p>
-          <p>{isLoading ? `+0` : recoveredDiff}</p>
+          <p>{isLoading ? `+0` : todayRecoveredDiff}</p>
           <p>
             {isLoading ? 0 : `${todayRecovered} (${todayRecoveredPercentage})`}
           </p>
